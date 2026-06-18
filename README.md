@@ -111,25 +111,6 @@ node inline.cjs   # 将构建产物内联为单文件
 
 ---
 
-## ☁️ 后端代理部署（可选）
-
-若需自行部署 SCF 代理服务，请参考以下步骤：
-
-### 1. 创建 GitHub Token
-前往 [GitHub Settings > Developer settings > Personal access tokens](https://github.com/settings/tokens) 创建 Token，权限勾选 `gist`。
-
-### 2. 部署至腾讯云 SCF
-1. 登录 [腾讯云 SCF 控制台](https://console.cloud.tencent.com/scf)
-2. 创建新函数，运行时选择 **Node.js 22**
-3. 将 `scf-function.js` 中的代码粘贴至函数代码区
-4. 将 GitHub Token 填入代码中的 `GITHUB_TOKEN` 变量
-5. 开启 **函数 URL** 触发方式，获取访问地址
-
-### 3. 更新前端配置
-将 `src/utils/gistService.ts` 中的 `API_BASE` 替换为你的 SCF 函数 URL。
-
----
-
 ## 📂 项目结构
 
 ```
@@ -172,7 +153,7 @@ app/
 
 ## 📄 License
 
-MIT License — 仅供学习交流使用。
+MIT License
 
 ---
 
