@@ -66,79 +66,21 @@
 ## 🛠️ 技术栈
 
 ### 前端
-- **框架**：[React 19](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
-- **构建工具**：[Vite 8](https://vitejs.dev/) + [vite-plugin-singlefile](https://github.com/richardtallent/vite-plugin-singlefile)
-- **样式**：[Tailwind CSS 3](https://tailwindcss.com/) + [Lucide React](https://lucide.dev/) 图标库
-- **路由**：[React Router DOM 7](https://reactrouter.com/)
-- **导出**：[jsPDF](https://github.com/parallax/jsPDF) (PDF) + [SheetJS xlsx](https://sheetjs.com/) (Excel)
-- **二维码**：[qrcode.react](https://github.com/zpao/qrcode.react)
+- **框架**：React 19 + TypeScript
+- **构建工具**：Vite 8 + vite-plugin-singlefile
+- **样式**：Tailwind CSS 3 + Lucide React 图标库
+- **路由**：React Router DOM 7
+- **导出**：jsPDF (PDF) + SheetJS xlsx (Excel)
+- **二维码**：qrcode.react
 
 ### 后端
-- **云服务**：[腾讯云 SCF](https://cloud.tencent.com/product/scf) (Serverless Cloud Function)
-- **存储**：[GitHub Gist API](https://docs.github.com/en/rest/gists)
-- **安全代理**：SCF 函数作为前端与 GitHub API 之间的代理层
+- **云服务**：腾讯云 SCF (Serverless Cloud Function)
+- **存储**：GitHub Gist API
+- **安全代理**：SCF 函数作为前端与 GitHub API 之间的代理层，Token 仅存在于服务端
 
 ### 部署
-- **静态托管**：[GitHub Pages](https://pages.github.com/)
-- **CI/CD**：推送 `dist-single/index.html` 自动触发部署
-
----
-
-## 🚀 本地开发
-
-### 环境要求
-- Node.js 18+
-- npm / pnpm / yarn
-
-### 安装依赖
-```bash
-cd app
-npm install
-```
-
-### 启动开发服务器
-```bash
-npm run dev
-```
-访问 `http://localhost:5173` 查看效果。
-
-### 构建生产版本
-```bash
-npm run build
-node inline.cjs   # 将构建产物内联为单文件
-```
-输出文件：`dist-single/index.html`
-
----
-
-## 📂 项目结构
-
-```
-app/
-├── src/
-│   ├── components/        # 公共组件 (Navbar 等)
-│   ├── pages/            # 页面组件
-│   │   ├── Home.tsx          # 首页
-│   │   ├── UserResume.tsx    # 求职者简历编辑
-│   │   ├── ResumePreview.tsx # 简历预览 / PDF 导出
-│   │   ├── Enterprise.tsx    # 企业端查询入口
-│   │   └── EnterpriseView.tsx# 企业端简历查看
-│   ├── utils/
-│   │   └── gistService.ts   # 云端存储服务 (调用 SCF 代理)
-│   └── App.tsx           # 路由配置
-├── scf-function.js       # 腾讯云 SCF 代理函数代码
-├── dist-single/          # 构建输出的单文件 (GitHub Pages 托管)
-└── package.json
-```
-
----
-
-## 🔒 安全说明
-
-- ✅ 前端代码中 **不包含** 任何 GitHub Token 或敏感信息
-- ✅ GitHub Token 仅存在于腾讯云 SCF 服务端
-- ✅ SCF 函数通过 CORS 限制请求来源（可配置）
-- ⚠️ `scf-function.js` 含有 Token，**请勿提交至公开仓库**
+- **静态托管**：GitHub Pages
+- **单文件输出**：`dist-single/index.html`
 
 ---
 
@@ -153,7 +95,7 @@ app/
 
 ## 📄 License
 
-MIT License
+MIT License — 详见 [LICENSE](./LICENSE) 文件。
 
 ---
 
