@@ -4,7 +4,7 @@
 
 **AI 驱动的智能简历系统与云端招聘解决方案**
 
-[在线演示](https://15562886669.github.io/zhihao-resume) · [问题反馈](https://github.com/15562886669/zhihao-resume/issues)
+[在线演示](https://Ablu6669.github.io/zzh_resume-system) · [问题反馈](https://github.com/Ablu6669/zzh_resume-system/issues)
 
 </div>
 
